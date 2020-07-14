@@ -1,4 +1,10 @@
 # Checkout the documentation for this YAML template here:
+- task: DownloadCostData@1
+  inputs:
+    ConnectedServiceNameARM: 'MPN - FREZENDE(e3454697-f8ad-4681-8b6d-717c25d12e41)'
+    DaysToDownload: '60'
+    apiToUse: 'consumption'
+    filter: 'no'
 # https://github.com/keesschollaart81/AzureCostInsights.Marketplace/wiki/YAML-Pipeline
 
 trigger: none
