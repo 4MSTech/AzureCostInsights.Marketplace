@@ -1,11 +1,3 @@
-# Checkout the documentation for this YAML template here:
-- task: DownloadCostData@1
-  inputs:
-    ConnectedServiceNameARM: 'MPN - FREZENDE(e3454697-f8ad-4681-8b6d-717c25d12e41)'
-    DaysToDownload: '60'
-    apiToUse: 'consumption'
-    filter: 'no'
-# https://github.com/keesschollaart81/AzureCostInsights.Marketplace/wiki/YAML-Pipeline
 
 trigger: none
 pr: none
@@ -17,21 +9,21 @@ jobs:
 
   steps:
   
-  - task: keesschollaart.AzureCostInsights-Dev.AzureCostInsightsWidget.DownloadTask.DownloadCostData@1
+  - task: frezende.AzureCostInsights-Dev.AzureCostInsightsWidget.DownloadTask.DownloadCostData@1
     displayName: 'Download cost data - Kees Prive'
     inputs:
-      ConnectedServiceNameARM: '86af7676-6a6f-4ae1-9fea-538d6b69d1ca' 
+      ConnectedServiceNameARM: 'e3454697-f8ad-4681-8b6d-717c25d12e41' 
       apiToUse: usage
       currency: EUR
-      locale: 'nl-nl'
-      regioInfo: NL 
+      locale: 'pt-br'
+      regioInfo: BR 
 
-  - task: keesschollaart.AzureCostInsights-Dev.AzureCostInsightsWidget.DownloadTask.DownloadCostData@1
+  - task: frezende.AzureCostInsights-Dev.AzureCostInsightsWidget.DownloadTask.DownloadCostData@1
     displayName: 'Download Cost Data'
     inputs:
-      ConnectedServiceNameARM: 'e5834a49-9dd8-4dc1-8dda-df2d20501da0'
+      ConnectedServiceNameARM: 'e3454697-f8ad-4681-8b6d-717c25d12e41'
   
-  - task: keesschollaart.AzureCostInsights-Dev.AzureCostInsightsWidget.PublishTask.PublishCostData@1
+  - task: frezende.AzureCostInsights-Dev.AzureCostInsightsWidget.PublishTask.PublishCostData@1
     displayName: 'Publish Cost Data'
     continueOnError: true
 
